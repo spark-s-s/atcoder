@@ -25,5 +25,10 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-
+  int n, k; cin >> n >> k;
+  vi a(n); REP(i, n) cin >> a[i];
+  k = min(n, k);
+  FOR(i, k, n-1) cout << a[i] << " ";
+  REP(i, k) cout << 0 << " ";
+  cout << endl;
 }
