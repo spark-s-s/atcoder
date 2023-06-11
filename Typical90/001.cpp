@@ -28,16 +28,16 @@ int main() {
   int n, l, k, ans; cin >> n >> l >> k;
   vi a(n);
   REP(i, n) cin >> a[i];
-  
+
   int left = 0, right = l, count, edge;
   while (right - left > 1) {
     int mid = (left + right) / 2;
     count = 0;
     edge = 0;
     REP(i, n) {
-      if (a[i] - pre >= mid && l - a[i] >= mid) {
+      if (a[i] - edge >= mid && l - a[i] >= mid) {
         count++;
-        pre = a[i];
+        edge = a[i];
       }
     }
     if (count >= k) left = mid;
