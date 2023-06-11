@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include  <atcoder/all>
+#include <atcoder/all>
 using namespace std;
 using str = string;
 using ll = long long;
