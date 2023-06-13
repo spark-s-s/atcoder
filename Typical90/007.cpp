@@ -26,4 +26,17 @@ const double PI = 3.141592653589793;
 
 int main() {
   // 各B_iについてiでにぶたん
+  int n; cin >> n;
+  vi a(n); REP(i, n) cin >> a[n];
+  int q; cin >> q;
+  REP(i, q) {
+    int b; cin >> b;
+    int left = 0, right = n-1;
+    while (right - left >= 1){
+      int mid = left + (right - left) / 2;
+      if (X[mid] > b) right = mid - 1;
+      else if (X[mid] < b) left = mid + 1;
+    }
+  }
+  if(mid = 0) cout << 
 }
