@@ -31,3 +31,7 @@ long long GCD(long long a, long long b) {
 <https://qiita.com/drken/items/56a6b68edef8fc605821>
 
 - 愚直だとΟ(N)かかる配列の部分和を求める処理をΟ(N)の前処理によってΟ(1)にする
+
+## DP
+
+- DynamicPrograming / 動的計画法のこと
