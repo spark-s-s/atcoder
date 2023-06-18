@@ -8,6 +8,18 @@
 
 - データの追加・削除・検索がΟ(logN)でできる
 
+## 最大公約数
+
+- ユークリッドの互除法により求められる
+
+```cpp
+long long GCD(long long a, long long b) {
+  if(b == 0) return a;
+  else return GCD(b, a % b);
+}
+
+```
+
 ## 累積和
 
 <https://qiita.com/drken/items/56a6b68edef8fc605821>
