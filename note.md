@@ -2,6 +2,13 @@
 
 ## 目次
 
+## データ型
+
+- `int` : `-(2^31)`～`(2^31)-1`
+- `unsigned int` : `0`～`(2^32)-1`
+- `long long` : `-(2^63)`～`(2^63)-1`
+- `unsigned long long` : `0`～`(2^64)-1`
+
 ## std::set
 
 <https://cpprefjp.github.io/reference/set/set.html>
