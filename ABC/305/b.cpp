@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-#include  <atcoder/all>
 using namespace std;
+#include  <atcoder/all>
 using str = string;
 using ll = long long;
 using ld = long double;
@@ -25,17 +25,23 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-  ll n, q; cin >> n >> q;
-  set <pair<int, int>> st;
-  REP(i, q) {
-    int t, a ,b; cin >> t >> a >> b;
-    if (t == 1) {
-      st.insert({a,b});
-    } else if (t == 2) {
-      st.erase({a,b});
-    } else {
-      Yes(st.count({a,b}) && st.count({b,a}));
-    }
+  char p, q; cin >> p >> q;
+  int n_p, n_q;
+  n_p = p - 'A';
+  n_q = q - 'A';
+  if(n_p > n_q) {
+    int temp;
+    temp = n_p;
+    n_p = n_q;
+    n_q = temp;
   }
-  return 0;
+  vi line(7);
+  line[0] = 0;
+  line[1] = 3;
+  line[2] = 4;
+  line[3] = 8;
+  line[4] = 9;
+  line[5] = 14;
+  line[6] = 23;
+  cout << line[n_q] - line[n_p] << endl;
 }

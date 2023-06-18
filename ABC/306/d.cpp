@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include  <atcoder/all>
+#include <atcoder/all>
 using namespace std;
 using str = string;
 using ll = long long;
@@ -25,17 +25,21 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-  ll n, q; cin >> n >> q;
-  set <pair<int, int>> st;
-  REP(i, q) {
-    int t, a ,b; cin >> t >> a >> b;
-    if (t == 1) {
-      st.insert({a,b});
-    } else if (t == 2) {
-      st.erase({a,b});
+  ll n; cin >> n;
+  vl x(n), y(n);
+  REP(i, n) cin >> x[i] >> y[i];
+  
+  vvl dp(n+1, vl(2));
+  dp[0][0] = ll(0);
+  dp[0][1] = ll(0);
+  FOR(i, 1, n) {
+    if(x[i-1] == 0) {
+      dp[i][0] = max({dp[i-1][0], dp[i-1][0] + y[i-1], dp[i-1][1] + y[i-1]});
+      dp[i][1] = dp[i-1][1];
     } else {
-      Yes(st.count({a,b}) && st.count({b,a}));
+      dp[i][0] = dp[i-1][0];
+      dp[i][1] = max({dp[i-1][1], dp[i-1][0] + y[i-1]});
     }
   }
-  return 0;
+  cout << max(dp[n][0], dp[n][1]) << endl; 
 }

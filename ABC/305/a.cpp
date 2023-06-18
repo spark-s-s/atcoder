@@ -25,17 +25,8 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-  ll n, q; cin >> n >> q;
-  set <pair<int, int>> st;
-  REP(i, q) {
-    int t, a ,b; cin >> t >> a >> b;
-    if (t == 1) {
-      st.insert({a,b});
-    } else if (t == 2) {
-      st.erase({a,b});
-    } else {
-      Yes(st.count({a,b}) && st.count({b,a}));
-    }
-  }
-  return 0;
+  int n, a; cin >> n;
+  if(n%5<3) a = n/5;
+  else a = n/5 + 1;
+  cout << 5 * a << endl;
 }

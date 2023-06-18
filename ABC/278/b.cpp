@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-using namespace std;
 #include  <atcoder/all>
+using namespace std;
 using str = string;
 using ll = long long;
 using ld = long double;
@@ -25,5 +25,20 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-
+  int h, m; cin >> h >> m;
+  int a, b, c, d;
+  while (true) {
+    a = h/10; b = h%10; c = m/10; d = m%10;
+    if (10 * a + c >= 0 && 10*a + c <= 23 && 10*b + d >= 0 && 10*b + d <= 59) {
+      break;
+    }
+    m++;
+    if (m == 60) {
+      m = 0;
+      h++;
+    }
+    if (h == 24) h = 0;
+  }
+  cout << a << b << " " << c << d << endl;
+  return 0;
 }

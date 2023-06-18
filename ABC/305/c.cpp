@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-#include  <atcoder/all>
 using namespace std;
+#include  <atcoder/all>
 using str = string;
 using ll = long long;
 using ld = long double;
@@ -25,17 +25,42 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-  ll n, q; cin >> n >> q;
-  set <pair<int, int>> st;
-  REP(i, q) {
-    int t, a ,b; cin >> t >> a >> b;
-    if (t == 1) {
-      st.insert({a,b});
-    } else if (t == 2) {
-      st.erase({a,b});
-    } else {
-      Yes(st.count({a,b}) && st.count({b,a}));
+  int h, w; cin >> h >> w;
+  vvb s(h, vb(w));
+  REP(i, h) {
+    REP(j, w) {
+      char c; cin >> c;
+      if (c == '#') s[i][j] = true;
+      else s[i][j] = false;
     }
   }
-  return 0;
+  int x_a, y_a, count;
+  bool f = false;
+  REP(i, h) {
+    REP(j, w) {
+      count = 0;
+      if(!s[i][j]) {
+        if(i!=0) {
+          if(s[i-1][j]) count++;
+        }
+        if(i!=h-1) {
+          if(s[i+1][j]) count++;
+        }
+        if(j!=0) {
+          if(s[i][j-1]) count++;
+        }
+        if(j!=w-1) {
+          if(s[i][j+1]) count++;
+        }
+      }
+      if(count > 1) {
+        x_a = i + 1;
+        y_a = j + 1;
+        f = true;
+        break;
+      }
+    }
+    if(f) break;
+  }
+  cout << x_a << " " << y_a << endl;
 }

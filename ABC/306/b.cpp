@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include  <atcoder/all>
+#include <atcoder/all>
 using namespace std;
 using str = string;
 using ll = long long;
@@ -25,17 +25,12 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-  ll n, q; cin >> n >> q;
-  set <pair<int, int>> st;
-  REP(i, q) {
-    int t, a ,b; cin >> t >> a >> b;
-    if (t == 1) {
-      st.insert({a,b});
-    } else if (t == 2) {
-      st.erase({a,b});
-    } else {
-      Yes(st.count({a,b}) && st.count({b,a}));
-    }
+  unsigned long long ans = 0;
+  REP(i, 64) {
+    int b; cin >> b;
+    unsigned long long tmp = 1;
+    if(i != 0) REP(j, i) tmp = tmp * 2;
+    ans += b * tmp;
   }
-  return 0;
+  cout << ans << endl;
 }
