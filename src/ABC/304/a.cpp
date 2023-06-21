@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include <atcoder/all>
+// #include <atcoder/all>
 using namespace std;
 using str = string;
 using ll = long long;
@@ -25,5 +25,24 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
+  int n;
+  cin >> n;
+  vector<str> s(n);
+  vi a(n);
+  REP(i, n) cin >> s[i] >> a[i];
 
+  bool f = false;
+  int tmp = 0;
+  REP(i, n) {
+    if (a[i] == MIN(a)) {
+      f = true;
+      tmp = i;
+    }
+    if (f) {
+      cout << s[i] << endl;
+    }
+  }
+  REP(i, tmp) {
+    cout << s[i] << endl;
+  }
 }
