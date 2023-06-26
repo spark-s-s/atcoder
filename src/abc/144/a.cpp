@@ -22,16 +22,11 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-	int n;
-	cin >> n;
-	REP(i, n) {
-		ll ans = 0;
-		REP(j, 7) {
-			int tmp;
-			cin >> tmp;
-			ans += tmp;
-		}
-		cout << ans << ' ';
+	int a, b;
+	cin >> a >> b;
+	if (a > 9 || b > 9) {
+		cout << -1 << endl;
+	} else {
+		cout << a * b << endl;
 	}
-	cout << endl;
 }
