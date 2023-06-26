@@ -22,16 +22,9 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-	int n;
-	cin >> n;
-	REP(i, n) {
-		ll ans = 0;
-		REP(j, 7) {
-			int tmp;
-			cin >> tmp;
-			ans += tmp;
-		}
-		cout << ans << ' ';
-	}
-	cout << endl;
+	int a, b;
+	cin >> a >> b;
+	if (b == 0) cout << "Gold" << endl;
+	else if (a == 0) cout << "Silver" << endl;
+	else cout << "Alloy" << endl;
 }
