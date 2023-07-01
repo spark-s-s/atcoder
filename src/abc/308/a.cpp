@@ -22,5 +22,16 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-  
+  vi data(8);
+  REP(i, 8) cin >> data[i];
+
+  bool f = true;
+
+  REP(i, 7) if(data[i]>data[i+1]) f = false;
+
+  REP(i, 8) if(data[i]<100 || data[i]>675) f = false;
+
+  REP(i, 8) if(data[i]%25!=0) f = false;
+
+  Yes(f);
 }
