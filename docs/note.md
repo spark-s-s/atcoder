@@ -9,6 +9,13 @@
 - `long long` : `-(2^63)`～`(2^63)-1`
 - `unsigned long long` : `0`～`(2^64)-1`
 
+## std::pair
+
+<https://cpprefjp.github.io/reference/utility/pair.html>
+
+- 異なる2つの型を保持する組を表現する
+- `vector<pair>`をソートすると`first`がまずソートされ，`first`が同一の値だった範囲で`second`がソートされる
+
 ## std::set
 
 <https://cpprefjp.github.io/reference/set/set.html>
