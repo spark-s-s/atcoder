@@ -22,5 +22,31 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-  
+  int n, m;
+  cin >> n >> m;
+
+  vector<str> c(n);
+  REP(i, n) cin >> c[i];
+
+  vector<str> d(m);
+  REP(i, m) cin >> d[i];
+
+  int p0;
+  cin >> p0;
+
+  vi p(m+1);
+  REP(i, m) cin >> p[i];
+  p[m] = p0;
+
+  int ans = 0;
+
+  REP(i, n) {
+    int tmp = m;
+    REP(j, m) {
+      if(c[i]==d[j]) tmp = j;
+    }
+    ans += p[tmp];
+  }
+
+  cout << ans << endl;
 }
