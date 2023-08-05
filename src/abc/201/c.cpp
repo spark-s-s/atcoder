@@ -22,27 +22,33 @@ using vvl = vector<vector<long long>>;
 const double PI = 3.141592653589793;
 
 int main() {
-  int a = 0, b = 0, ans;
+  int ans = 0;
+  vvb data(10, vb(2, false));
   REP(i, 10) {
     char tmp;
     cin >> tmp;
-    if (tmp == 'o') a++;
-    else if (tmp == '?') b++;
+    if (tmp == 'o') data[i][0] = true;
+    else if (tmp == 'x') data[i][1] = true;
   }
-  switch (a) {
-    case 0: ans = pow(b, 4); break;
-    case 1: ans = pow(b+1, 4) - pow(b, 4); break;
-    case 2:
-      switch (b) {
-        case 0: ans = 2*2*2*2-2; break;
-        default: ans = pow(b+2, 4) - 2; break;
+  vb pass(10, false);
+  REP(i, 10) {
+    REP(j, 10) {
+      REP(k, 10) {
+        REP(l, 10) {
+          bool is_good = true;
+          vb pass(10, false);
+          pass[i] = true;
+          pass[j] = true;
+          pass[k] = true;
+          pass[l] = true;
+          REP(m, 10) {
+            if (data[m][0] && !pass[m]) is_good = false;
+            if (data[m][1] && pass[m]) is_good = false;
+          }
+          if (is_good) ans++;
+        }
       }
-    case 3:
-      switch (b) {
-        case 0: ans = 3*4*3/2*2; break;
-        default: ans = 3*4*3/2*2 + 4*3*2*b; break;
-      }
-    case 4: ans = 4*3*2; break;
-    default: ans = 0; break;
+    }
   }
+  cout << ans << endl;
 }
