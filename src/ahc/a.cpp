@@ -14,7 +14,7 @@ int main() {
   // 定義
   std::vector<std::vector<int> >
     placement(size_of_grid, std::vector<int>(size_of_grid, 0));
-  std::vector<int> E(number_of_exits, 0);
+  std::vector<int> ans(number_of_exits, 0);
 
   // 配置
   for (int i=0; i < size_of_grid; i++) {
@@ -40,7 +40,7 @@ int main() {
 
   // 回答
   for (int i=0; i < number_of_exits; i++) {
-    std::cout << E[i] << std::endl;
+    std::cout << ans[i] << std::endl;
   }
   std::cout.flush();
 }
