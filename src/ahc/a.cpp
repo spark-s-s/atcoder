@@ -17,7 +17,8 @@ int main() {
 
   // 定義
   std::vector<std::vector<int> >
-    placement(size_of_grid, std::vector<int>(size_of_grid, 0));
+    placement(size_of_grid,
+      std::vector<int>(size_of_grid, number_of_exits / 2));
   std::vector<int> ans(number_of_exits, 0);
 
   // 配置の決定
