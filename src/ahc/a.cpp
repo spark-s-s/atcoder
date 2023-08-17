@@ -40,8 +40,14 @@ int main() {
   for (int i=0; i < number_of_exits; i++) {
     std::cout << i << ' ' << 0 << ' ' << 0 << std::endl;
     std::cout.flush();
-    std::cin >> memory[i].first;
-    memory[i].second = i;
+    int tmp;
+    std::cin >> tmp;
+    if (tmp != -1) {
+      std::cin >> memory[i].first;
+      memory[i].second = i;
+    } else {
+      break;
+    }
   }
 
   // 計測 while
